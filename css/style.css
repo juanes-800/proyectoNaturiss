@@ -1,0 +1,199 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    margin-bottom: 20px;
+    
+}
+
+body{
+    background-color: white;
+    font-family: 'Roboto',sans-serif;
+}
+
+
+h1{
+    color: royalblue;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+#botonCarrito{
+    border: none;
+    color:royalblue;
+    font-size: 40px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px 20px;
+    transition: all .3s;
+}
+
+#botonCarrito:hover{
+    cursor: pointer;
+    color: white;
+    background-color: royalblue;
+}
+
+#botonCarrito:focus{
+    outline: none;
+}
+
+#contenedorProductos{
+    max-width: 1200px;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+p{
+    line-height: 1.8;
+}
+
+.productor{
+    max-width: 20%;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 6px 3px 3px  rgba(0,0,0,0.3);
+}
+h3{
+    text-align: center;
+}
+
+.precioProducto{
+    font-weight: 700;
+    padding: 5px;
+    border:none;
+    text-align: center;  
+}
+
+.botonAgregar{
+    background-color: rgb(11, 68, 238);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 5px;
+    border: none;
+}
+
+.botonAgregar:hover{
+    cursor: pointer;
+}
+
+.botonAgregar:focus{
+    outline: none;
+}
+
+.modoContenedor{
+  position: fixed;
+  top: 0;
+  width: 40%;
+  height: 100vh;
+  background-color:  rgba(0,0,0,0.3); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modoActive{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modoCarrito{
+    position: relative;
+    background-color: white;
+    min-width: 500px;
+    padding: 20px;
+    margin-top: -50%;
+    transition: all .5s
+}
+
+.modoActive.modoCarrito{
+    margin-top: 0;
+}
+
+.modoCarrito h3 {
+    color: royalblue;
+    padding-bottom: 5px;
+}
+
+.modoCarrito #carritoCerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: royalblue;
+    border: none;
+    background-color: white;
+}
+
+.modoCarrito #carritoCerrar:hover {
+    cursor: pointer;
+}
+
+.modoCarrito #carritoCerrar:focus {
+    outline: none;
+}
+
+.modoCarrito .precioProducto {
+    padding-top: 10px;
+    
+}
+
+
+.productoEnCarrito {
+    border-left: 5px solid lightblue;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.productoEnCarrito:hover {
+    border-left: 5px solid royalblue;
+}
+
+.botonEliminar {
+    background-color: white;
+    color: red;
+    border: none;
+    font-size: 20px;
+}
+
+.botonEliminar:hover {
+    cursor: pointer;
+}
+.botonEliminar:focus {
+    outline: none;
+}
+
+.logo{
+    width: 40%;
+    height: 40%;
+    display: block;
+    margin: auto;
+}
+
+.tamano{
+    font-size: 12px;
+}
+
+
+img{
+    width: 100%;
+    margin-bottom: 10px;
+}
