@@ -1,6 +1,6 @@
 
 const contenedorProductos = document.getElementById('contenedorProductos');
-
+//ingreso el html
 arrayProductos.forEach((producto) => {
     const div = document.createElement('div');
     div.classList.add('productor');
@@ -12,14 +12,14 @@ arrayProductos.forEach((producto) => {
     contenedorProductos.appendChild(div);
 
     const boton = document.getElementById(`agregar${producto.id}`)
-
+     //agrego el carrito con el id
     boton.addEventListener('click',() => {
       agregarAlCarrito(producto.id);
     })
 })
 
 let carrito = [];
-
+//agregar al carrito y aumentar  la cantidad que no se repite,comprobar si el elemento ya esxite en el carro para eso utilizo condicionales
 const agregarAlCarrito =(prodId)=> {
   const existe = carrito.some(prod => prod.id === prodId);
   if(existe){
@@ -31,14 +31,14 @@ const agregarAlCarrito =(prodId)=> {
   } else{
     const item = arrayProductos.find((prod) => prod.id === prodId);
     carrito.push(item);
-    console.log(carrito);
   }
   actualizarCarrito();
+  console.log(carrito);
  
 }
 
 const contenedorCarrito = document.getElementById('carritoContenedor');
-
+//eliminar prodducto del carrito 
 const eliminarDelCarrito = (prodId) => {
   const item = carrito.find((prod) => prod.id === prodId);
   const indice = carrito.indexOf(item);
@@ -46,7 +46,7 @@ const eliminarDelCarrito = (prodId) => {
   actualizarCarrito();
   console.log(carrito);
 }
-
+// actualizar carrito
 const actualizarCarrito = () => {
   contenedorCarrito.innerHTML = "";
   carrito.forEach((prod) => {
@@ -58,14 +58,15 @@ const actualizarCarrito = () => {
     <p> cantidad: <span id= "cantidad">${prod.cantidad}</span></p>
     <button onclick= "eliminarDelCarrito(${prod.id})" class="botonEliminar"><i class="fas fa-trash-alt"></button`;
     contenedorCarrito.appendChild(div);
-    localStorage.setItem('carrito', JSON.stringify(carrito))
+    localStorage.setItem('carrito', JSON.stringify(carrito));
 
   })
+  //sumar los precios de los productos a agregar en el carrito
   contadorCarrito.innerText = carrito.length;
-  console.log(precioTotal)
-  precioTotal.innerText = carrito.reduce((acc,prod) => acc + prod.cantidad * prod.precio, 0)
+  console.log(carrito);
+  precioTotal.innerText = carrito.reduce((acc,prod) => acc + prod.cantidad * prod.precio, 0);
 }
-
+//vaciar todos los elementos en el carrito
 const botonVaciar = document.getElementById('vaciarCarrito');
 botonVaciar.addEventListener('click',() =>{
   carrito.length = 0;
