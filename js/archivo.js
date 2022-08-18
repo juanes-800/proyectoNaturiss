@@ -85,5 +85,11 @@ document.addEventListener('DOMContentLoaded',() =>{
   }
 })
 
+Swal.fire(
+  
+  'Envio gratis por compras superiores a',
+  '$100.000'
+)
+
 
 
