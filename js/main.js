@@ -33,7 +33,6 @@ const agregarAlCarrito =(prodId)=> {
     carrito.push(item);
   }
   actualizarCarrito();
-  console.log(carrito);
  
 }
 
@@ -44,7 +43,6 @@ const eliminarDelCarrito = (prodId) => {
   const indice = carrito.indexOf(item);
   carrito.splice(indice,1);
   actualizarCarrito();
-  console.log(carrito);
 }
 // actualizar carrito
 const actualizarCarrito = () => {
@@ -63,7 +61,6 @@ const actualizarCarrito = () => {
   })
   //sumar los precios de los productos a agregar en el carrito
   contadorCarrito.innerText = carrito.length;
-  console.log(carrito);
   precioTotal.innerText = carrito.reduce((acc,prod) => acc + prod.cantidad * prod.precio, 0);
 }
 //vaciar todos los elementos en el carrito
@@ -83,7 +80,23 @@ document.addEventListener('DOMContentLoaded',() =>{
     carrito = JSON.parse(localStorage.getItem('carrito'));
     actualizarCarrito();
   }
-})
+});
+
+ const nuevos = document.getElementById("nuevos");
+ fetch("/data.json")
+ .then(response => response.json())
+ .then(nuevoProducto =>{
+  nuevoProducto.forEach(nuevoProductos => {
+    const div = document.createElement("div");
+    div.className = ('productor');
+    div.innerHTML = ` 
+       <img src= ${nuevoProductos.img} alt = "">
+       <h3>${nuevoProductos.nombre}</h3>
+    `;
+    nuevos.append(div)
+  });
+ })
+
 
 Swal.fire(
   
