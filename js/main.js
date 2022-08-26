@@ -82,21 +82,30 @@ document.addEventListener('DOMContentLoaded',() =>{
   }
 });
 
+//implemento fetch
  const nuevos = document.getElementById("nuevos");
- fetch("/data.json")
- .then(response => response.json())
- .then(nuevoProducto =>{
-  nuevoProducto.forEach(nuevoProductos => {
-    const div = document.createElement("div");
-    div.className = ('productor');
-    div.innerHTML = ` 
-       <img src= ${nuevoProductos.img} alt = "">
-       <h3>${nuevoProductos.nombre}</h3>
-    `;
-    nuevos.append(div)
-  });
- })
 
+ const traerProducto = async () => {
+   try {
+    const response = await fetch("/data.json");
+    const data = await response.json();
+    data.forEach(nuevoProductos => {
+      const div = document.createElement("div");
+      div.className = ('productoNuevos');
+      div.innerHTML = ` 
+      <div>
+         <img src= ${nuevoProductos.img} alt = "">
+         <h3>${nuevoProductos.nombre}</h3>
+      </div>   
+      `; 
+      nuevos.append(div);
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+ }
+ traerProducto();
 
 Swal.fire(
   

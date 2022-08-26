@@ -15,7 +15,7 @@
 
 <body>
   <header>
-    <p class="text-warning bg-dark parrafo ">Envios gratis por compras superiores a $ 100.000</p>
+    <p class="text-warning bg-dark parrafo centrar ">Envios gratis por compras superiores a $ 100.000</p>
     <img src="../img/logo.jpg" class="img-fluid logo" alt="logo representativo de la web naturis">
   </header>
 
@@ -39,12 +39,15 @@
   </main>
 
   <section>
-    <div id="contenedorProductos" ></div> 
+    <div id="contenedorProductos" >
+      <h3 class="precioProducto"></h3>
+    </div> 
   </section>
 
   <section>
     <div class="modoContenedor modoActive">
       <div class="modoCarrito">
+           <img src="" class="imagen" alt="">
           <h3>Carrito</h3>
           <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
           <div id="carritoContenedor"></div>
@@ -54,8 +57,9 @@
   </div>
     
   </section>
-  <section id="nuevos">
+  <section>
     <h1>proximos productos</h1>
+    <div id="nuevos"></div>
 
   </section>
 
