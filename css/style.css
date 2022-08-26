@@ -19,10 +19,11 @@ body{
 
 
 h1{
-    color: royalblue;
+    color: rgb(40, 41, 43);
     text-transform: uppercase;
     font-weight: 700;
     font-size: 50px;
+    text-align: center;
 }
 
 #botonCarrito{
@@ -197,4 +198,15 @@ h3{
 img{
     width: 100%;
     margin-bottom: 10px;
+}
+
+#nuevos{
+    display: inline-flex;
+
+}
+.centrar{
+    text-align: center;
+}
+.imagen{
+   height: auto; 
 }
