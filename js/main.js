@@ -70,6 +70,15 @@ botonVaciar.addEventListener('click',() =>{
   actualizarCarrito();
 
 })
+//comprar en el carrito
+const comprar = document.getElementById("comprar");
+comprar.addEventListener('click', () =>{
+  precioTotal.innerHTML = "";
+  carritoContenedor.innerHTML = "";
+  contadorCarrito.innerHTML = "";
+  gracias();
+  
+});
 
 const contadorCarrito = document.getElementById('contadorCarrito');
 
@@ -113,5 +122,11 @@ Swal.fire(
   '$100.000'
 )
 
+function gracias(){
+  swal.fire(
+  
+    'Gracias por su compra'
+  )
+}
 
 
