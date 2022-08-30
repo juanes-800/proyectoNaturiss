@@ -1,5 +1,17 @@
+/* Nombre: Juan Esteban Alzate Trujillo
+edad: 32 años
+pais: colombia
+estudios: Estudiante de desarrollo full stack, ingeniero en industria alimentaria
+nombre del proyecto: Naturiss
+version: 1.0
+año:2022
+
+*/    
+
+
 
 const contenedorProductos = document.getElementById('contenedorProductos');
+
 //ingreso el html
 arrayProductos.forEach((producto) => {
     const div = document.createElement('div');
@@ -20,12 +32,13 @@ arrayProductos.forEach((producto) => {
 
 let carrito = [];
 //agregar al carrito y aumentar  la cantidad que no se repite,comprobar si el elemento ya esxite en el carro para eso utilizo condicionales
+
 const agregarAlCarrito =(prodId)=> {
   const existe = carrito.some(prod => prod.id === prodId);
   if(existe){
     const prod = carrito.map(prod =>{
       if(prod.id ===prodId){
-        prod.cantidad++
+        prod.cantidad++;
       }
     })
   } else{
@@ -37,6 +50,7 @@ const agregarAlCarrito =(prodId)=> {
 }
 
 const contenedorCarrito = document.getElementById('carritoContenedor');
+
 //eliminar prodducto del carrito 
 const eliminarDelCarrito = (prodId) => {
   const item = carrito.find((prod) => prod.id === prodId);
@@ -44,6 +58,7 @@ const eliminarDelCarrito = (prodId) => {
   carrito.splice(indice,1);
   actualizarCarrito();
 }
+
 // actualizar carrito
 const actualizarCarrito = () => {
   contenedorCarrito.innerHTML = "";
@@ -59,10 +74,12 @@ const actualizarCarrito = () => {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
   })
+
   //sumar los precios de los productos a agregar en el carrito
   contadorCarrito.innerText = carrito.length;
   precioTotal.innerText = carrito.reduce((acc,prod) => acc + prod.cantidad * prod.precio, 0);
 }
+
 //vaciar todos los elementos en el carrito
 const botonVaciar = document.getElementById('vaciarCarrito');
 botonVaciar.addEventListener('click',() =>{
@@ -70,6 +87,7 @@ botonVaciar.addEventListener('click',() =>{
   actualizarCarrito();
 
 })
+
 //comprar en el carrito
 const comprar = document.getElementById("comprar");
 comprar.addEventListener('click', () =>{
@@ -101,12 +119,9 @@ document.addEventListener('DOMContentLoaded',() =>{
     data.forEach(nuevoProductos => {
       const div = document.createElement("div");
       div.className = ('productoNuevos');
-      div.innerHTML = ` 
-      <div>
-         <img src= ${nuevoProductos.img} alt = "">
-         <h3>${nuevoProductos.nombre}</h3>
-      </div>   
-      `; 
+      div.innerHTML = `
+      <img src= ${nuevoProductos.img} alt = "">
+      <h3>${nuevoProductos.nombre}</h3>`; 
       nuevos.append(div);
     });
     
@@ -125,7 +140,7 @@ Swal.fire(
 function gracias(){
   swal.fire(
   
-    'Gracias por su compra'
+    'Gracias por tu compra'
   )
 }
 
