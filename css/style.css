@@ -12,7 +12,7 @@
 }
 
 body{
-    background-color: rgb(217, 206, 206);
+    background-color: rgb(223, 220, 220);
     font-family: 'Roboto',sans-serif;
 }
 
@@ -23,6 +23,8 @@ h1{
     font-weight: 700;
     font-size: 50px;
     text-align: center;
+    margin: 2rem;
+    padding: 1rem;
 }
 
 #botonCarrito{
@@ -70,6 +72,8 @@ p{
 }
 h3{
     text-align: center;
+    margin: 1rem;
+    padding: 1rem;
 }
 
 .precioProducto{
@@ -140,7 +144,7 @@ h3{
     font-size: 20px;
     color:  #adb5bd;
     border: none;
-    background-color: white;
+    background-color: rgb(238, 230, 230);
 }
 
 .modoCarrito #carritoCerrar:hover {
@@ -192,10 +196,6 @@ h3{
     margin: auto;
 }
 
-.tamano{
-    font-size: 12px;
-}
-
 
 img{
     width: 100%;
@@ -203,17 +203,49 @@ img{
 }
 
 #nuevos{
-    display: inline-flex;
-
+    margin: 100px;
+    display: flex; 
 }
+
 
 .centrar{
     text-align: center;
 }
-.imagen{
-   height: auto; 
-}
+
+
 .productoNuevos :hover{
     transform: scale(1.1);
 
+}
+
+.animacion{
+    font-size: 40px;
+    background: linear-gradient(#f90c0c, #fb6424);
+    color: transparent;
+    background-clip: text;
+   -webkit-background-clip:text; 
+   -moz-background-clip: text;
+   animation: text 0.3s linear infinite;
+}
+
+@keyframes text{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(25deg);
+    }
+}
+
+.footerContainer{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.medida{
+    width: 40px;
+}
+ul{
+    list-style: none;
 }
